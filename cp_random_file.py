@@ -1,4 +1,7 @@
 #链接：https://www.zhihu.com/question/60868436/answer/307219795
+###对scrPath中文件进行随机抽取175个，到datPath中
+###
+###
 import random
 import os
 import shutil
@@ -11,6 +14,6 @@ def random_copyfile(srcPath,dstPath,numfiles):
     for oldname in random_name_list:
         shutil.copyfile(oldname,oldname.replace(srcPath, dstPath))
 
-srcPath='xxx/srcdata'         
-dstPath = 'xxx/train'
-random_copyfile(srcPath,dstPath,100)
+srcPath='/home/kcao/test/tmp/AGAC_training'         
+dstPath = '/home/kcao/test/tmp/train_data'
+random_copyfile(srcPath,dstPath,175)
