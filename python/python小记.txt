@@ -1,4 +1,4 @@
-###1.python 读入文件  read()、readline()、readlines()  #https://www.jianshu.com/p/d8168034917c
+###1.python 读入文件  read()、readline()、readlines()                                      #https://www.jianshu.com/p/d8168034917c
 ###AGAC track 比赛  
 
 read()的利端：一次性独读出文件放在一个大字符串中，速度最快
@@ -13,3 +13,9 @@ readlines()：
     这种方法读取的文本内容，每行文本末尾都会带一个'\n'换行符 (可以使用L.rstrip('\n')去掉换行符）
 
 小结：最优雅的方式是用with，还可以隐式的处理异常。最快的读取是xreadlines()
+
+###2.str与repo()区别                                                                      #参考https://www.jianshu.com/p/2a41315ca47e
+str() 与 repr() 的不同在于：
+    str() 的输出追求可读性，输出格式要便于理解，适合用于输出内容到用户终端。
+    repr() 的输出追求明确性，除了对象内容，还需要展示出对象的数据类型信息，适合开发和调试阶段使用。
+    
