@@ -1,0 +1,15 @@
+###1.python 读入文件  read()、readline()、readlines()  #https://www.jianshu.com/p/d8168034917c
+###AGAC track 比赛  
+
+read()的利端：一次性独读出文件放在一个大字符串中，速度最快
+    read()的弊端：文件过大的时候，占用内存会过大
+    
+readline()：逐行读取文本，结果是一个list
+    占用内存小，逐行读取
+    由于是逐行读取，速度比较慢
+
+readlines()：
+    一次性读取文本的所有内容，结果是一个list
+    这种方法读取的文本内容，每行文本末尾都会带一个'\n'换行符 (可以使用L.rstrip('\n')去掉换行符）
+
+小结：最优雅的方式是用with，还可以隐式的处理异常。最快的读取是xreadlines()
