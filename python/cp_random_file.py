@@ -22,6 +22,9 @@ dstPath = '/home/kcao/test/tmp/kcao_train_data'
 lastpath='/home/kcao/test/tmp/kcao_test_data'
 random_copyfile(srcPath,dstPath,lastpath,175)
 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
 ###知识点总结：
 #通常习惯的写法，合并目录
 >>> import os
