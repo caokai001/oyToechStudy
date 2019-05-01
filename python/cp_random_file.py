@@ -26,7 +26,15 @@ random_copyfile(srcPath,dstPath,lastpath,175)
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 ###知识点总结：
-#通常习惯的写法，合并目录
+#1.通常习惯的写法，合并目录
 >>> import os
 >>> os.path.join('/hello/','good/boy/','doiido')
 输出：'/hello/good/boy/doiido'
+
+#2.os.listdir()
+#3.shutil
+#是一种高层次的文件操作工具
+#类似于高级API，而且主要强大之处在于其对文件的复制与删除操作更是比较支持好。
+#参考：https://www.jianshu.com/p/b4c87aa6fd24
+shutil.mv文件移动
+>>>shutil.move('C:/Users/xiaoxinsoso/Desktop/aaa', 'C:/Users/xiaoxinsoso/Desktop/bbb') # 把aaa目录移动到bbb目录下
