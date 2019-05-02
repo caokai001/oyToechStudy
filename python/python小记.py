@@ -32,7 +32,7 @@ str() 与 repr() 的不同在于：
 ###5.区间处理函数interval：
     from interval import Interval
     
-eg1：interval 只能拼接相邻区间
+eg1：interval 只能拼接相邻区间;类似bedtools merge
 from functools import reduce
 from interval import Interval
 def join(x,y):
