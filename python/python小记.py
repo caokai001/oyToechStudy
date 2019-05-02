@@ -32,7 +32,7 @@ str() 与 repr() 的不同在于：
 ###5.区间处理函数interval：
     from interval import Interval
     
-eg1：interval 只能拼接相邻区间;类似bedtools merge
+eg1：interval 只能拼接相邻区间;类似bedtools merge                                 
 from functools import reduce
 from interval import Interval
 def join(x,y):
@@ -44,22 +44,36 @@ B=[[2,5]]
 join(A,B)
 
 eg2: 判断哪些sent_span，在下一个列表里面没交集：
-sent_span=\
-[(0, 153),
+sent_span=[(0, 153),
  (154, 302),
  (303, 418),
  (419, 533),
  (534, 665),
- (666, 827)]
-denotation_span=\
-[(0, 37),
+ (666, 827),
+ (828, 1036),
+ (1037, 1197),
+ (1198, 1343),
+ (1344, 1630),
+ (1631, 1767),
+ (1768, 1905),
+ (1906, 2080),
+ (2081, 2242)]
+denotation_span=[(0, 37),
  (71, 75),
  (86, 92),
  (93, 112),
  (154, 176),
  (303, 312),
  (344, 348),
- (369, 378)]
+ (369, 378),
+ (1631, 1649),
+ (1654, 1667),
+ (1691, 1697),
+ (1701, 1708),
+ (1781, 1788),
+ (1803, 1811),
+ (1812, 1827),
+ (1831, 1836)]
 A=sent_span.copy()
 record=[]
 for i in range(len(sent_span)):
@@ -71,5 +85,5 @@ for i in range(len(sent_span)):
         print(sent_span[i][0],sent_span[i][1],"number=",num)
         record.append((sent_span[i][0],sent_span[i][1]))
         A.remove((sent_span[i][0],sent_span[i][1]))
-print(record)
-print(A)
+print("record:",record)
+print("A:",A)
