@@ -74,13 +74,14 @@ denotation_span=[(0, 37),
  (1803, 1811),
  (1812, 1827),
  (1831, 1836)]
-A=sent_span.copy()
+A=sent_span.copy()    ###采用列表remove 方法，一定要copy(),不然会index 报错
 record=[]
 for i in range(len(sent_span)):
     num = 0
     for den_start, den_end in denotation_span:
         if den_start >= sent_span[i][0] and den_end <= sent_span[i][1]:
             num += 1
+            ###break
     if num>0:
         print(sent_span[i][0],sent_span[i][1],"number=",num)
         record.append((sent_span[i][0],sent_span[i][1]))
@@ -96,3 +97,20 @@ print("A:",A)
 #1768 1905 number= 4
 #record: [(0, 153), (154, 302), (303, 418), (1631, 1767), (1768, 1905)]
 #A: [(419, 533), (534, 665), (666, 827), (828, 1036), (1037, 1197), (1198, 1343), (1344, 1630), (1906, 2080), (2081, 2242)]
+
+                                    
+###6 python两个 list 获取交集，并集，差集的方法      https://blog.csdn.net/u012412259/article/details/53175473
+1. 获取两个list 的交集
+>>>a=[2,3,4,5]
+>>>b=[2,5,8]
+>>>[for i in a if i not in b]
+Out[78]: [3, 4]   
+>>>set(a).intersection(set(b))
+Out[80]: {2, 5}   
+2.获取两个list 的并集
+>>>set(a).union(set(b))
+Out[81]: {2, 3, 4, 5, 8} 
+3.获取两个 list 的差集                                 
+>>>list(set(b).difference(set(a)))
+Out[82]: [8]                                
+                      
