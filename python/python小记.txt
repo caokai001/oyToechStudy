@@ -19,3 +19,57 @@ str() 与 repr() 的不同在于：
     str() 的输出追求可读性，输出格式要便于理解，适合用于输出内容到用户终端。
     repr() 的输出追求明确性，除了对象内容，还需要展示出对象的数据类型信息，适合开发和调试阶段使用。
     
+###3.json读入方式
+    json.loads() 读入字符串
+    json.load()  读入文件
+    
+###4.reduce()
+    from functools import reduce
+    def add(x,y):
+        return x + y
+    print (reduce(add, range(1, 101)))
+  
+###5.区间处理函数interval：
+    from interval import Interval
+    
+eg1：interval 只能拼接相邻区间
+from functools import reduce
+from interval import Interval
+def join(x,y):
+    A=Interval(x[0][0],x[0][1])
+    B=Interval(y[0][0], y[0][1])
+    print(A.join(B))
+A=[[1,2]]
+B=[[2,5]]
+join(A,B)
+
+eg2: 判断哪些sent_span，在下一个列表里面没交集：
+sent_span=\
+[(0, 153),
+ (154, 302),
+ (303, 418),
+ (419, 533),
+ (534, 665),
+ (666, 827)]
+denotation_span=\
+[(0, 37),
+ (71, 75),
+ (86, 92),
+ (93, 112),
+ (154, 176),
+ (303, 312),
+ (344, 348),
+ (369, 378)]
+A=sent_span.copy()
+record=[]
+for i in range(len(sent_span)):
+    num = 0
+    for den_start, den_end in denotation_span:
+        if den_start >= sent_span[i][0] and den_end <= sent_span[i][1]:
+            num += 1
+    if num>0:
+        print(sent_span[i][0],sent_span[i][1],"number=",num)
+        record.append((sent_span[i][0],sent_span[i][1]))
+        A.remove((sent_span[i][0],sent_span[i][1]))
+print(record)
+print(A)
