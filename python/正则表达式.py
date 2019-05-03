@@ -1,5 +1,6 @@
 ###正则表达式1
 ##资料来源：https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143193331387014ccd1040c814dee8b2164bb4f064cff000
+##https://cuiqingcai.com/977.html
 1.re模块
 有了准备知识，我们就可以在Python中使用正则表达式了。Python提供re模块，包含所有正则表达式的功能。由于Python的字符串本身也用"\"转义，所以要特别注意：
 >>> s = 'ABC\\-001' # Python的字符串
@@ -67,7 +68,7 @@ is_valid_email('someone@gmail.com')
 ###正则表达式2
 re 模块的一般使用步骤如下：
     .使用 compile 函数将正则表达式的字符串形式编译为一个 Pattern 对象
-    .通过 Pattern 对象提供的一系列方法对文本进行匹配查找，获得匹配结果（一个 Match 对象）
+    .通过 Pattern 对象提供的一系列方法对文本进行匹配查找，获得匹配结果（一个 Match 对象）：match对象有很多属性方法###https://cuiqingcai.com/977.html
     .最后使用 Match 对象提供的属性和方法获得信息，根据需要进行其他的操作
 函数：
     compile 函数：用于编译正则表达式，生成一个 Pattern 对象。
