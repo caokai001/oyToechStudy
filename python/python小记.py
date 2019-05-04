@@ -114,3 +114,22 @@ Out[81]: {2, 3, 4, 5, 8}
 >>>list(set(b).difference(set(a)))
 Out[82]: [8]                                
                       
+###7.1 filter(func,seq) 过滤seq里面序列，func函数返回值是True or False.filter返回值是iterater.   #https://mbd.baidu.com/newspage/data/landingshare?pageType=1&isBdboxFrom=1&context=%7B%22nid%22%3A%22news_9223914821840656006%22%2C%22sourceFrom%22%3A%22bjh%22%7D
+>>>def is_odd(n):
+        return n%2==1
+>>>list(filter(is_odd,[1,2,3,4,5,56]))
+                                    
+>>>import math
+>>>def is_sqr(x):
+        return math.sqrt(x) % 2 ==0
+>>>list(filter(is_sqr,range(1,101)))
+Out[55]: [4, 16, 36, 64, 100]
+###7.2 genetor 生成器    ;使用for 循环调用，或者next() 调用
+def _odd_iter():
+    n=1
+    while True:
+        n=n+2
+        yield n
+gen=_odd_iter()
+for i in range(5):
+    print(next(gen))
