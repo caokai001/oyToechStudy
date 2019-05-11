@@ -6,9 +6,10 @@
 df$pvalue%>%as.data.frame()%>%ggplot(aes(x=df$pvalue))+geom_histogram(binwidth = 0.01)+xlab("P-value")+ggtitle("41.result.csv")+theme_classic()+theme(plot.title = element_text(hjust = 0.5))
 ```
 [图片](https://upload-images.jianshu.io/upload_images/9589088-9c2c5bd79a1e320b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620/format/webp)
+- 2.添加直线 `+geom_abline(intercept=,slope= )` 回归直线  `+geom_smooth(method="lm",se=FALSE)`
+[来源](https://www.cnblogs.com/wkslearner/p/5697471.html)
 
-
-> 2.[dplyr大全](https://blog.csdn.net/wltom1985/article/details/54973811)
+> 二、2.[dplyr大全](https://blog.csdn.net/wltom1985/article/details/54973811)
 1.  数据集类型转换
 2.   筛选:  filter
 3. 排列: arrange
