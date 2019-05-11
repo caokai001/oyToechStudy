@@ -1,4 +1,5 @@
 ###记录
+>一、ggplot2
 
 - 1.ggplot title居中 `+theme(plot.title = element_text(hjust = 0.5))`
 ```
@@ -6,7 +7,8 @@ df$pvalue%>%as.data.frame()%>%ggplot(aes(x=df$pvalue))+geom_histogram(binwidth =
 ```
 [图片](https://upload-images.jianshu.io/upload_images/9589088-9c2c5bd79a1e320b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620/format/webp)
 
-- 2.[dplyr大全](https://blog.csdn.net/wltom1985/article/details/54973811)
+
+> 2.[dplyr大全](https://blog.csdn.net/wltom1985/article/details/54973811)
 1.  数据集类型转换
 2.   筛选:  filter
 3. 排列: arrange
