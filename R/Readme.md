@@ -24,3 +24,14 @@ df$pvalue%>%as.data.frame()%>%ggplot(aes(x=df$pvalue))+geom_histogram(binwidth =
 12. 数据合并: bind
 13. 条件语句：ifelse
 14. 数据库操作: database
+
+> 三、排序
+> x<-c(1,5,8,2,9,7,4)
+- order(x)#x中排第2的数字在原数列中的位置
+[1] 1 4 7 2 6 3 5
+- sort(x) #x数值排序后x数值本身
+[1] 1 2 4 5 7 8 9
+- rank(x) #x中数值在排序数列中的排名
+[1] 1 4 6 2 7 5 3 
+
+原文：https://blog.csdn.net/u012543538/article/details/16340907 
