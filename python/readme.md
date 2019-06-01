@@ -29,3 +29,15 @@ print (id(e), e)
 print (id(f), f)
 #[[10], 20]
 ```
+
+##3.logging 模块
+[参考](https://blog.csdn.net/huilan_same/article/details/77869225)
+```
+import logging
+logger = logging.getLogger('test')
+logging.basicConfig()  # basicConfig是logging提供的简单的配置方法，不用basicConfig则需要手动添加handler
+logger.setLevel(logging.INFO)  # 输出所有大于等于INFO级别的log
+logger.info('I am <info> message.')
+logger.debug('I am <debug> message.')  # 不输出
+
+```
