@@ -1,4 +1,6 @@
 ### 记录python 学习
+
+>[python3 文档](https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p11_add_logging_to_simple_scripts.html)
 >## 1.eval这个函数就是在返回，它觉得正确的那个值   
 a,b=eval(input())
 
