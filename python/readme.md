@@ -43,3 +43,10 @@ logger.info('I am <info> message.')
 logger.debug('I am <debug> message.')  # 不输出
 
 ```
+
+##4.[python寻找list中最大值、最小值并返回其所在位置](https://blog.csdn.net/fengjiexyb/article/details/77435676)
+
+c = [-10,-5,0,5,3,10,15,-20,25]
+
+print(c.index(min(c)))  # 返回最小值
+print(c.index(max(c))) # 返回最大值
