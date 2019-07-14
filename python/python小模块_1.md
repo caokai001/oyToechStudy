@@ -15,8 +15,8 @@ from IPython.display import Image
 Image(url= "1.jpg")
 
 ```
-或者参考[HPO project](https://github.com/Nanguage/BioTMCourse/blob/master/HPO%20enrich/hpoea/utils/download.py)
-
+参考[HPO project](https://github.com/Nanguage/BioTMCourse/blob/master/HPO%20enrich/hpoea/utils/download.py)
+##1. 下载文件
 ```
 import logging
 import requests
@@ -41,6 +41,8 @@ def download_file(url, file_name,file_dir):
     logger.info("Data download done, file saved to: {}".format(path))
     return path
 
+
+##
 DATA_DIR = os.path.join(os.path.expanduser("~"),r"Desktop\152\HPO")
 print(DATA_DIR)
 # such as HPO example
