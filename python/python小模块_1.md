@@ -50,3 +50,26 @@ print(DATA_DIR)
 HPO_OBO_URL = "https://raw.githubusercontent.com/obophenotype/human-phenotype-ontology/master/hp.obo"
 download_file(HPO_OBO_URL,"hpo.txt",DATA_DIR)
 ```
+
+
+## 2.log模块
+```
+import sys
+import logging
+
+LOGGING_FMT = "%(name)-20s %(levelname)-7s @ %(asctime)s: %(message)s"
+LOGGING_DATE_FMT = "%m/%d/%y %H:%M:%S"
+
+def get_logger(name, level=None):
+    log = logging.getLogger(name)
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter(fmt=LOGGING_FMT, datefmt=LOGGING_DATE_FMT))
+    log.addHandler(handler)
+    if level:
+        log.setLevel(level)
+    else:
+        log.setLevel(logging.DEBUG)
+    return log
+log=get_logger("yes","INFO")
+log.warning("hello")
+```
