@@ -1,4 +1,30 @@
-## 1. 下载及其展示图片
+
+## 2.log模块
+```
+import sys
+import logging
+
+LOGGING_FMT = "%(name)-20s %(levelname)-7s @ %(asctime)s: %(message)s"
+LOGGING_DATE_FMT = "%m/%d/%y %H:%M:%S"
+
+def get_logger(name, level=None):
+    log = logging.getLogger(name)
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(logging.Formatter(fmt=LOGGING_FMT, datefmt=LOGGING_DATE_FMT))
+    log.addHandler(handler)
+    if level:
+        log.setLevel(level)
+    else:
+        log.setLevel(logging.DEBUG)
+    return log
+log=get_logger("yes","INFO")
+log.warning("hello")
+```
+
+
+
+## 1. 下载及其展示图片  
+参考[HPO project](https://github.com/Nanguage/BioTMCourse/blob/master/HPO%20enrich/hpoea/utils/download.py)
 
 ```
 url = "http://wx4.sinaimg.cn/large/d030806aly1fq1vn8j0ajj21ho28bduy.jpg"
@@ -15,7 +41,7 @@ from IPython.display import Image
 Image(url= "1.jpg")
 
 ```
-参考[HPO project](https://github.com/Nanguage/BioTMCourse/blob/master/HPO%20enrich/hpoea/utils/download.py)
+
 
 ## 1. 下载文件
 ```
@@ -52,24 +78,4 @@ download_file(HPO_OBO_URL,"hpo.txt",DATA_DIR)
 ```
 
 
-## 2.log模块
-```
-import sys
-import logging
 
-LOGGING_FMT = "%(name)-20s %(levelname)-7s @ %(asctime)s: %(message)s"
-LOGGING_DATE_FMT = "%m/%d/%y %H:%M:%S"
-
-def get_logger(name, level=None):
-    log = logging.getLogger(name)
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setFormatter(logging.Formatter(fmt=LOGGING_FMT, datefmt=LOGGING_DATE_FMT))
-    log.addHandler(handler)
-    if level:
-        log.setLevel(level)
-    else:
-        log.setLevel(logging.DEBUG)
-    return log
-log=get_logger("yes","INFO")
-log.warning("hello")
-```
