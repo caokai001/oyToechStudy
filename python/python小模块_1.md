@@ -1,4 +1,4 @@
-##1. 下载及其展示图片
+## 1. 下载及其展示图片
 
 ```
 url = "http://wx4.sinaimg.cn/large/d030806aly1fq1vn8j0ajj21ho28bduy.jpg"
@@ -17,7 +17,7 @@ Image(url= "1.jpg")
 ```
 参考[HPO project](https://github.com/Nanguage/BioTMCourse/blob/master/HPO%20enrich/hpoea/utils/download.py)
 
-##1. 下载文件
+## 1. 下载文件
 ```
 import logging
 import requests
