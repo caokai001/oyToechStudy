@@ -1,3 +1,34 @@
+## 3.plotnine 模块画图及其图片保存及其打开
+[plotnine](https://plotnine.readthedocs.io/en/stable/generated/plotnine.geoms.geom_tile.html#periodic-table-of-elements)
+https://blog.csdn.net/kmd8d5r/article/details/79987785
+>ggplot2 
+
+```
+from plotnine import *
+import plotnine
+from PIL import Image
+gsea.enrichment_table
+df = gsea.enrichment_table.sort_values(by="pvalue", ascending=True)
+df = df.iloc[:10, :]
+df
+#保存
+p=ggplot(df,aes(x="pvalue",y="factor(gene_num)"))+geom_point()+theme(figure_size=[4,5])
+df.sort_values(by="gene_num", ascending=True)["HPO_term_name"]
+p.save("test.png")
+#打开
+Image.open("test.png")
+
+```
+```
+ggplot(df,aes(x="pvalue",y="factor(gene_num)"))+geom_point()+theme(figure_size=(6,4),plot_background=element_rect(fill='white'),axis_text_y=element_text(margin={'r': 5}, color='blue', size=9))+theme_bw()+scale_x_continuous(breaks=[0.001,0.002],labels=["1e^-3","2e^-3"])+scale_y_discrete(labels=df.sort_values(by="gene_num", ascending=False)["HPO_term_name"].values)
+
+```
+
+
+
+
+
+
 
 ## 2.log模块
 ```
