@@ -1,3 +1,74 @@
+
+### 4.argparse模块解析
+[简书](https://www.jianshu.com/p/fef2d215b91d)
+[知乎](https://zhuanlan.zhihu.com/p/34395749)
+>cat `argv_argparse.py`
+```
+import argparse
+
+parser = argparse.ArgumentParser(description = 'Personal Information ',epilog = 'Information end ')
+    #必写属性,第一位
+parser.add_argument("name",         type = str,                  help = "Your name")
+    #必写属性,第二位
+parser.add_argument("birth",        type = str,                  help = "birthday")
+    #可选属性,默认为None
+parser.add_argument("-r",'--race',  type = str, dest = "race",   help = u"ming zu")
+    #可选属性,默认为0,范围必须在0~10
+parser.add_argument("-a", "--age",  type = int, dest = "age",    help = "Your age",         default = 0,      choices=range(10))
+    #可选属性,默认为male
+parser.add_argument('-s',"--sex",   type = str, dest = "sex",    help = 'Your sex',         default = 'male', choices=['male', 'female'])
+    
+	#添加互斥参数
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-y","--very_handsome" ,help="handsome yes",action="store_true")
+group.add_argument("-n","--common" ,help="handsome no",action="store_true")
+	#可选属性,默认为None,-p后可接多个参数
+parser.add_argument("-p","--parent",type = str, dest = 'parent', help = "Your parent",      default = "None", nargs = '*')
+    #可选属性,默认为None,-o后可接多个参数
+parser.add_argument("-o","--other", type = str, dest = 'other',  help = "other Information",required = False,nargs = '*')
+args = parser.parse_args()
+
+if args.very_handsome:
+	print("yes,very_handsome!\n")
+if args.common:
+	print("common peopel")
+
+print ("argparse.parser=",args,type(args))
+print ('name = %s'%args.name)
+print("\n")
+d = args.__dict__
+for key,value in d.items():
+    print ('%s = %s'%(key,value))
+
+
+
+```
+
+>运行 $ python `argv_argparse.py` xiaoming 1991.11.11 -p xiaohong xiaohei -a 9 -r han -s female -o 1 2 3 4 5 6 -y
+```
+yes,very_handsome!
+
+argparse.parser= Namespace(age=9, birth='1991.11.11', common=False, name='xiaoming', other=['1', '2', '3', '4', '5', '6'], parent=['xiaohong', 'xiaohei'], race='han', sex='female', very_handsome=True) <class 'argparse.Namespace'>
+name = xiaoming
+
+
+name = xiaoming
+birth = 1991.11.11
+race = han
+age = 9
+sex = female
+very_handsome = True
+common = False
+parent = ['xiaohong', 'xiaohei']
+other = ['1', '2', '3', '4', '5', '6']
+```
+
+
+
+
+
+
+
 ## 3.plotnine 模块画图及其图片保存及其打开
 [plotnine](https://plotnine.readthedocs.io/en/stable/generated/plotnine.geoms.geom_tile.html#periodic-table-of-elements)
 https://blog.csdn.net/kmd8d5r/article/details/79987785
