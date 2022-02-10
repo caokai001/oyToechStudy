@@ -1,7 +1,7 @@
 import time
 import turtle as tws
 
-time.sleep(10)
+time.sleep(2)
 tws.title('冰墩墩')
 
 tws.speed(10)  # 速度
